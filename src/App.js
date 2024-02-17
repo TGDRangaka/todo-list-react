@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 function App() {
   const [colors] = useState(['#FF6F31','#359EFF','#FBFF2A','#39FF35']);
   const [category, setCategory] = useState(['Workouts', 'School', 'Home', 'Finacial', 'Office']);
-  const [tasks, setTasks] = useState([{id:Date.now().toString() ,name:'Test Task', category:'Workout', color:'#FF6F31', state:false}]);
+  const [tasks, setTasks] = useState([{id:Date.now().toString() ,name:'Go to gym', category:'Workout', color:'#FF6F31', state:false}]);
 
   const updateTask = (task) => {
     setTasks((tasks) => {
