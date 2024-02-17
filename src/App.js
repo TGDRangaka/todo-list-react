@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App flex flex-col items-center align-middle text-white h-screen">
       <img src={topPath} className=" absolute -z-10" alt='top-png' />
-      <h1 className="text-8xl text-center my-20 kranky-regular">ToDo List</h1>
+      <h1 className="text-8xl text-center my-20 kranky-regular">To Do List</h1>
 
       <main className="container max-w-screen-md flex flex-col items-center">
         <AddTask task={tasks} setTasks={setTasks} colors={colors} category={category} setCategory={setCategory}/>
