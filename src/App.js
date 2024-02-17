@@ -18,10 +18,16 @@ function App() {
     });
   }
 
+  const removeTask = (id) => {
+    setTasks((tasks) => {
+      return tasks.filter((t) => t.id!== id);
+    });
+  }
+
   return (
     <div className="App flex flex-col items-center align-middle text-white h-screen">
       <img src={topPath} className=" absolute -z-10" alt='top-png' />
-      <h1 onClick={()=>{console.log(tasks)}} className="text-8xl text-center my-20 kranky-regular">ToDo List</h1>
+      <h1 className="text-8xl text-center my-20 kranky-regular">ToDo List</h1>
 
       <main className="container max-w-screen-md flex flex-col items-center">
         <AddTask task={tasks} setTasks={setTasks} colors={colors} category={category} setCategory={setCategory}/>
@@ -31,7 +37,7 @@ function App() {
           {
             tasks.map((task) => {
               return (
-                <Task task={task} updateTask={updateTask} />
+                <Task task={task} updateTask={updateTask} removeTask={removeTask} />
               );
             })
           }

@@ -1,7 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import React, {useState} from 'react'
 
 
-function Task({ task, updateTask}){
+function Task({ task, updateTask, removeTask}){
     const [checked, setChecked] = useState(task.state);
   
     const handleInputChange = () => {
@@ -22,9 +24,9 @@ function Task({ task, updateTask}){
     }
   
     return (
-      <div className="Task w-full border border-zinc-800 bg-zinc-900 flex items-center justify-center h-16 mb-3 rounded-lg py-2 px-3 bg-black_gray border-task_border k2d-light">
+      <div className="Task w-full border border-zinc-800 bg-zinc-900 flex items-center justify-center h-16 mb-3 rounded-lg py-2 px-3 bg-black_gray border-task_border k2d-light hover:scale-105 duration-100">
   
-        <div class="inline-flex items-center mr-3">
+        <div class="inline-flex items-center mr-3 hover:scale-125 duration-150">
           <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="ripple-on"
             data-ripple-dark="true">
             <input id="ripple-on" type="checkbox"
@@ -48,7 +50,12 @@ function Task({ task, updateTask}){
         </div>
   
         <label className="grow text-2xl" style={checked ? nonActiveTask : activeTask}>{task.name}</label>
-        <label className="w-48 text-right text-xl" style={textColor}>#{task.category}</label>
+        <label className="w-48 text-right text-xl" style={textColor}>
+          #{task.category}<FontAwesomeIcon icon={faTrashCan} className="ml-6 mr-1 cursor-pointer hover:scale-125 duration-100"
+          onClick={()=>{
+            removeTask(task.id);
+          }} />
+        </label>
       </div>
     );
   }
