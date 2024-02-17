@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import ColorPicker from './ColorPicker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 function AddTask({ tasks, setTasks, colors, category, setCategory}) {
     const [taskName, setTaskName] = useState("");
@@ -29,7 +31,7 @@ function AddTask({ tasks, setTasks, colors, category, setCategory}) {
           setTaskName("");
         }}
         >
-          Add +
+          Add<FontAwesomeIcon icon={faPlus} className="ml-3 text-xl" />
         </button>
   
         <ColorPicker trigger={colorPickerPopUp} colors={colors} setTrigger={setColorPickerPopUp} categories={category} setCategories={setCategory} task={task} setTasks={setTasks} />
