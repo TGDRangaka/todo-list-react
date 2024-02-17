@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div className="App flex flex-col items-center align-middle text-white h-screen">
+    <div className="App flex flex-col items-center align-middle text-white h-screen p-2">
       <img src={topPath} className=" absolute -z-10" alt='top-png' />
       <h1 className="text-8xl text-center my-20 kranky-regular">To Do List</h1>
 

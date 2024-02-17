@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function ColorPicker({trigger, colors, setTrigger, categories, setCategories, task, setTasks}) {
-  const [selectedOption, setSelectedOption] = useState(categories[0]);
+  const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (option) => {
@@ -70,6 +70,7 @@ function ColorPicker({trigger, colors, setTrigger, categories, setCategories, ta
                               state: false,
                             },
                           ]);
+                        setSelectedOption("");
                         setTrigger(false)
                     }}
                     ></button>
